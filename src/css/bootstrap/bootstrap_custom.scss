@@ -1,0 +1,18 @@
+// NEEDED BOOTSTRAP IMPORTS
+@import "~bootstrap/scss/mixins/banner";
+@include bsBanner("");
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/variables-dark';
+@import '~bootstrap/scss/maps';
+@import '~bootstrap/scss/mixins';
+@import '~bootstrap/scss/utilities';
+
+// ADD CERTAIN COMPONENT STYLES WE WANT: have to do this so the react styles don't mess up the html w3 schools ones
+@import '~bootstrap/scss/transitions';
+@import '~bootstrap/scss/carousel';
+@import '~bootstrap/scss/spinners';
+@import '~bootstrap/scss/buttons';
+
+@import '~bootstrap/scss/helpers';
+@import '~bootstrap/scss/utilities/api';
