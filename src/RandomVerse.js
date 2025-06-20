@@ -26,8 +26,8 @@ function RandomVerse() {
         // console.log(data);
     }
     return (
-    <div className="daily-verse">
-        {(verseHeader.length > 0) && (text.length > 0) ? <div><h1 id="verseHeader">{verseHeader}</h1><h2 id="verseText">{text}</h2><a href="https://bible-api.com/" id="verseFooter"><h3>{footer}</h3></a></div>: 
+    <div className="random-verse">
+        {(verseHeader.length > 0) && (text.length > 0) ? <div><h1 id="verseHeader">{verseHeader}</h1><h2 id="verseText">{text}</h2><a href="https://bible-api.com/" style={{textDecoration: "none"}}><h3 id="verseFooter">{footer}</h3></a></div>: 
             <Spinner animation="border" role="status">
                 <span className="visually-hidden">Loading...</span>
             </Spinner>}

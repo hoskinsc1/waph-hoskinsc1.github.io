@@ -1,11 +1,11 @@
 #verseHeader {
     color: #FF4F0F;
-    font-size: calc(2rem + 1.5vw);
+    font-size: calc(2vw + 2vh + 2vmin);
 }
 
 #verseText {
     color: #FF4F0F;
-    font-size: calc(1rem + 1vw);
+    font-size: calc(1vw + 1vh + 2vmin);
 }
 
 #bibleVerse {
@@ -16,6 +16,7 @@
     transition: max-height 1s;
     overflow: hidden;
     height: 50vh;
+    max-height: 100vh;
     border-radius: 25px;
     border: #03A6A1;
     background-color: #FFE3BB;
@@ -27,13 +28,13 @@
     -o-transition: height 2s ease;
     transition: height 2s ease;
     display: flex;
-    justify-content: center;
     align-items: center;
 }
 
 #verseFooter {
+    text-decoration: none;
     color: #FF4F0F;
-    font-size: calc(.8rem + .9vw);
+    font-size: calc(.5vw + .5vh + 2vmin) !important;
 }
 
 .carousel-inner {
@@ -49,7 +50,6 @@
 }
 
 .carousel {
-    height: 100%;
     align-items: center;
     display: flex;
     -webkit-transition: height 2s ease; 
@@ -58,4 +58,6 @@
     -o-transition: height 2s ease;
     transition: height 2s ease;
 }
-
+.random-verse {
+    padding: 5px;
+}
