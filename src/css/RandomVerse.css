@@ -1,9 +1,11 @@
 #verseHeader {
     color: #FF4F0F;
+    font-size: calc(2rem + 1.5vw);
 }
 
 #verseText {
     color: #FF4F0F;
+    font-size: calc(1rem + 1vw);
 }
 
 #bibleVerse {
@@ -13,29 +15,24 @@
     -o-transition: max-height 1s; 
     transition: max-height 1s;
     overflow: hidden;
-    height: auto;
+    height: 50vh;
+    border-radius: 25px;
+    border: #03A6A1;
+    background-color: #FFE3BB;
+    margin-top: 2%;
+    width: 98%;
+    -webkit-transition: height 2s ease; 
+    -moz-transition: height 2s ease;
+    -ms-transition: height 2s ease;
+    -o-transition: height 2s ease;
+    transition: height 2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #verseFooter {
     color: #FF4F0F;
+    font-size: calc(.8rem + .9vw);
 }
 
-/* .carousel-item {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease-out;
-    /* -webkit-transition: max-height 1s; 
-    -moz-transition: max-height 1s; 
-    -ms-transition: max-height 1s; 
-    -o-transition: max-height 1s; 
-    transition: max-height 1s;   */
-/* }
-
-.carousel-item.active {
-    max-height: 1000px; */
-    /* -webkit-transition: max-height 1s; 
-    -moz-transition: max-height 1s; 
-    -ms-transition: max-height 1s; 
-    -o-transition: max-height 1s; 
-    transition: max-height 1s;  */
-/* } */

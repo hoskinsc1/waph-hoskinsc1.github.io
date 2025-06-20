@@ -8,14 +8,15 @@ function BibleVerses() {
     const [secondVerse, setSecondVerse] = useState(Math.random());
 
     const getNewVerse = (selectedIndex, e) => {
-        if (selectedIndex === 0) {
+        console.log(selectedIndex);
+        if (selectedIndex === 1) {
             setFirstVerse(Math.random());
         } else {
             setSecondVerse(Math.random());
         }   
     }
     return (
-        <Carousel id="carouselVerses" indicators={false} controls={false} interval={10000} onSlide={getNewVerse}>
+        <Carousel id="carouselVerses" indicators={false} controls={false} interval={10000} onSlid={getNewVerse}>
             <CarouselItem className="verse" id="firstVerse">
                 <RandomVerse key={firstVerse} />
             </CarouselItem>

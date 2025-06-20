@@ -1,6 +1,5 @@
 import {useState, useEffect } from 'react';
 import Spinner from 'react-bootstrap/Spinner';
-import Button from 'react-bootstrap/Button';
 import './css/RandomVerse.css'
 
 
@@ -29,16 +28,9 @@ function RandomVerse() {
     return (
     <div className="daily-verse">
         {(verseHeader.length > 0) && (text.length > 0) ? <div><h1 id="verseHeader">{verseHeader}</h1><h2 id="verseText">{text}</h2><a href="https://bible-api.com/" id="verseFooter"><h3>{footer}</h3></a></div>: 
-            <Button variant="primary" disabled>
-                <Spinner
-                as="span"
-                animation="grow"
-                size="sm"
-                role="status"
-                aria-hidden="true"
-                />
-                Loading Random Verse...
-            </Button>}
+            <Spinner animation="border" role="status">
+                <span className="visually-hidden">Loading...</span>
+            </Spinner>}
     </div>
     );
     }
