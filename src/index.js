@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './css/index.css';
 import BibleVerses from './BibleVerses';
+import './css/bootstrap/bootstrap_custom.scss'
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 const bibleVerse = ReactDOM.createRoot(document.getElementById('bibleVerse'));
 bibleVerse.render(

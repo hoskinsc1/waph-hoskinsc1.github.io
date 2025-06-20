@@ -1,7 +1,41 @@
 #verseHeader {
-    color: #FFE3BB;
+    color: #FF4F0F;
 }
 
 #verseText {
-    color: #FFE3BB;
+    color: #FF4F0F;
 }
+
+#bibleVerse {
+    -webkit-transition: max-height 1s; 
+    -moz-transition: max-height 1s; 
+    -ms-transition: max-height 1s; 
+    -o-transition: max-height 1s; 
+    transition: max-height 1s;
+    overflow: hidden;
+    height: auto;
+}
+
+#verseFooter {
+    color: #FF4F0F;
+}
+
+/* .carousel-item {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+    /* -webkit-transition: max-height 1s; 
+    -moz-transition: max-height 1s; 
+    -ms-transition: max-height 1s; 
+    -o-transition: max-height 1s; 
+    transition: max-height 1s;   */
+/* }
+
+.carousel-item.active {
+    max-height: 1000px; */
+    /* -webkit-transition: max-height 1s; 
+    -moz-transition: max-height 1s; 
+    -ms-transition: max-height 1s; 
+    -o-transition: max-height 1s; 
+    transition: max-height 1s;  */
+/* } */

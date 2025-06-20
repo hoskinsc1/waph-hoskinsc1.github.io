@@ -1,30 +1,29 @@
 import Carousel from 'react-bootstrap/Carousel';
 import CarouselItem from 'react-bootstrap/CarouselItem'
 import RandomVerse from './RandomVerse';
-// import "./css/bootstrap/forms"; // Required
-// import "./css/bootstrap/helpers"; // Required
-// import "./css/bootstrap/mixins/_clearfix.scss"; // Required
-// import "./css/bootstrap/utilities"; // Required
-// import "./css/bootstrap/vendor"; // Required
-// import './css/bootstrap/_carousel.scss'
-// import 'bootstrap/scss/_carousel.scss'
-// import 'boostrap/scss/mixins/_clearfix.scss'
-import './css/bootstrap/bootstrap_custom.scss'
+import {useState} from 'react';
 
 function BibleVerses() {
-  return (
-    <Carousel indicators={false} controls={false}>
-      <CarouselItem>
-        <RandomVerse key="verse1" />
-      </CarouselItem>
-      <CarouselItem>
-        <RandomVerse key="verse2" />
-      </CarouselItem>
-      <CarouselItem>
-        <RandomVerse key="verse3" />
-      </CarouselItem>
-    </Carousel>
-  );
+    const [firstVerse, setFirstVerse] = useState(Math.random());
+    const [secondVerse, setSecondVerse] = useState(Math.random());
+
+    const getNewVerse = (selectedIndex, e) => {
+        if (selectedIndex === 0) {
+            setFirstVerse(Math.random());
+        } else {
+            setSecondVerse(Math.random());
+        }   
+    }
+    return (
+        <Carousel id="carouselVerses" indicators={false} controls={false} interval={10000} onSlide={getNewVerse} fade>
+            <CarouselItem className="verse" id="firstVerse">
+                <RandomVerse key={firstVerse} />
+            </CarouselItem>
+            <CarouselItem className="verse" id="secondVerse">
+                <RandomVerse key={secondVerse} />
+            </CarouselItem>
+        </Carousel>
+    );
 }
 
 export default BibleVerses;
