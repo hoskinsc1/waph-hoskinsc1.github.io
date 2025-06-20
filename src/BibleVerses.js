@@ -15,7 +15,7 @@ function BibleVerses() {
         }   
     }
     return (
-        <Carousel id="carouselVerses" indicators={false} controls={false} interval={10000} onSlide={getNewVerse} fade>
+        <Carousel id="carouselVerses" indicators={false} controls={false} interval={10000} onSlide={getNewVerse}>
             <CarouselItem className="verse" id="firstVerse">
                 <RandomVerse key={firstVerse} />
             </CarouselItem>

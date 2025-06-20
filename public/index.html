@@ -164,8 +164,10 @@
   .navbar-nav li {
     float: left;
     height: 100%;
+    display: flex;
+    justify-content: center;
   }
-  .navbar-default .navbar-toggle {
+  .navbar-default .navbar-toggler {
     border-color: transparent;
     /* /* color: #03A6A1 !important; */
     color: #FFE3BB;
@@ -177,7 +179,18 @@
     transition: all 0.5s ease-in;
   }
 
-  .navbar-toggle:hover {
+  .navbar-toggler:hover {
+    color: #03A6A1 !important;
+    background: #FFE3BB !important;
+    border-radius: 25px;
+    border: #03A6A1 ;
+    -webkit-transition: all 0.5s ease-in; 
+    -moz-transition: all 0.5s ease-in; 
+    -ms-transition: all 0.5s ease-in;
+    -o-transition: all 0.5s ease-in;
+    transition: all 0.5s ease-in;
+  }
+  #toggleBtn:focus {
     color: #03A6A1 !important;
     background: #FFE3BB !important;
     border-radius: 25px;
@@ -189,17 +202,15 @@
     transition: all 0.5s ease-in;
   }
   #myNavbar {
-    height: 100% !important;
     justify-content: flex-end;
-    box-sizing: content-box !important;
+    -webkit-transition: height 2s ease; 
+    -moz-transition: height 2s ease;
+    -ms-transition: height 2s ease;
+    -o-transition: height 2s ease;
+    transition: height 2s ease;
   }
   .nav {
     background: #03A6A1;
-    -webkit-transition: all 0.5s ease-in; 
-    -moz-transition: all 0.5s ease-in; 
-    -ms-transition: all 0.5s ease-in;
-    -o-transition: all 0.5s ease-in;
-    transition: all 0.5s ease-in;
   }
   footer .glyphicon {
     font-size: 20px;
@@ -266,7 +277,7 @@
         </svg> 
         Caleb Hoskins
     </a>
-    <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#myNavbar" aria-controls="myNavbar" aria-expanded="false" aria-label="Toggle Nav">
+    <button type="button" id="toggleBtn" class="btn navbar-toggler" data-bs-toggle="collapse" data-bs-target="#myNavbar" aria-controls="myNavbar" aria-expanded="false" aria-label="Toggle Nav">
       <svg id="navBtnIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
         <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
       </svg>                       
