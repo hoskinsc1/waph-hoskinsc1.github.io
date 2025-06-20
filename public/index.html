@@ -280,6 +280,14 @@
     </div>
   </div>
 </nav>
+<script type="text/javascript">
+  // this will auto close the navbar if the user clicks outside of it in mobile view, or if one of the links are clicked
+  $(document).on('click',function(e){
+    if($('#myNavbar').hasClass('show')){
+      $('.collapse').collapse('hide'); 
+    }
+  })
+</script>
 
 <div class="container-fluid text-center" id="bibleVerse">
   <!-- populated by react component -->
