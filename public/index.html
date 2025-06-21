@@ -110,9 +110,9 @@
   }
   .navbar {
     background-color: #03A6A1;
-    font-size: max(1em, 20px);
+    font-size: max(1rem, 20px);
     font-family: Montserrat, sans-serif;
-    height: 8vh; 
+    /* height: 8vh;  */
     min-height: 50px;
   }
   .navbar li a, .navbar .navbar-brand {
@@ -142,12 +142,17 @@
     height: 1em;
     width: auto;
   }
+  #navBtnIcon {
+    height: 1.5em;
+    width: auto;
+  }
   .navbar-nav li a:hover, .navbar-nav li.active a {
     color: #03A6A1 !important;
     background-color: #FFE3BB !important;
       border-radius: 25px;
     border: #03A6A1;
     height: 100%;
+    flex-wrap: nowrap;
     -webkit-transition: all 0.5s ease-in; 
     -moz-transition: all 0.5s ease-in; 
     -ms-transition: all 0.5s ease-in;
@@ -162,7 +167,7 @@
     height: 100%;
     display: flex;
     justify-content: center;
-    padding: 10px;
+    padding: 2px;
   }
   .navbar-default .navbar-toggler {
     border-color: transparent;
@@ -208,6 +213,7 @@
   }
   .nav {
     background: #03A6A1;
+    flex-wrap: nowrap;
   }
   footer .glyphicon {
     font-size: 20px;
@@ -270,7 +276,7 @@
     </button>
     <!-- </div> -->
     <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav mr-auto mt-lg-0">
+      <ul class="nav navbar-nav">
         <li class="nav-item"><a href="#about" class="nav-link">ABOUT</a></li>
         <li class="nav-item"><a href="#experience" class="nav-link">EXPERIENCE</a></li>
         <li class="nav-item"><a href="#education" class="nav-link">EDUCATION</a></li>
