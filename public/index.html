@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
   <style>
   body {
     font: 400 15px Lato, sans-serif;
@@ -244,6 +245,10 @@
   .full-width {
     width: 100% !important;
   }
+  .skills-list {
+    border-radius: 25px;
+    width: fit-content;
+  }
   @keyframes slide {
     0% {
       opacity: 0;
@@ -452,8 +457,64 @@
 <!-- Container (Skills Section) -->
 <div id="skills" class="container-fluid bg-grey">
   <div class="row">
-    <div class="col-sm-8">
+    <div class="col-sm-8 full-width">
       <h2 class="custom-class">Skills</h2>
+      <div class="row" style="justify-content: center;">
+        <div class="col-sm-3">
+          <div class="row">
+            <h4 class="text-center">Programming Skills</h4>
+          </div>
+          <div class="row">
+            <div class="col-sm-4 full-width" style="display: flex; justify-content: center;">
+              <ul class="list-group list-group-flush skills-list">
+                <li class="list-group-item"><i class="bi bi-code-square"></i> Java</li>
+                <li class="list-group-item"><i class="bi bi-code-square"></i> Python</li>
+                <li class="list-group-item"><i class="bi bi-code-square"></i> Answer Set Programming (Clingo)</li>
+                <li class="list-group-item"><i class="bi bi-code-square"></i> JavaScript (Vue.js, React.js)</li>
+                <li class="list-group-item"><i class="bi bi-code-square"></i> SQL</li>
+                <li class="list-group-item"><i class="bi bi-code-square"></i> Go</li>
+                <li class="list-group-item"><i class="bi bi-code-square"></i> Scripting Languages (Shell, Bash, Make)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="row">
+            <h4 class="text-center">Technical Skills</h4>
+          </div>
+          <div class="row">
+            <div class="col-sm-4 full-width" style="display: flex; justify-content: center;">
+              <ul class="list-group list-group-flush skills-list">
+                <li class="list-group-item"><i class="bi bi-card-list"></i> Git</li>
+                <li class="list-group-item"><i class="bi bi-card-list"></i> Gradle with Maven & Nexus</li>
+                <li class="list-group-item"><i class="bi bi-card-list"></i> Docker</li>
+                <li class="list-group-item"><i class="bi bi-card-list"></i> Protobuf</li>
+                <li class="list-group-item"><i class="bi bi-card-list"></i> Autonomous System Design</li>
+                <li class="list-group-item"><i class="bi bi-card-list"></i> Dyamic Adaptive Programming</li>
+                <li class="list-group-item"><i class="bi bi-card-list"></i> State Transition Modeling & Code Generation</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="row">
+            <h4 class="text-center">Soft Skills</h4>
+          </div>
+          <div class="row">
+            <div class="col-sm-4 full-width" style="display: flex; justify-content: center;">
+              <ul class="list-group list-group-flush skills-list">
+                <li class="list-group-item"><i class="bi bi-file-person"></i> Communication</li>
+                <li class="list-group-item"><i class="bi bi-file-person"></i> Time Management</li>
+                <li class="list-group-item"><i class="bi bi-file-person"></i> Empathy</li>
+                <li class="list-group-item"><i class="bi bi-file-person"></i> Problem Solving</li>
+                <li class="list-group-item"><i class="bi bi-file-person"></i> Flexibility</li>
+                <li class="list-group-item"><i class="bi bi-file-person"></i> Teamwork</li>
+                <li class="list-group-item"><i class="bi bi-file-person"></i> Leadership</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
