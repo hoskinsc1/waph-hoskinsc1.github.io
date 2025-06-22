@@ -1,6 +1,8 @@
+/** Component that returns a random bible verse using bible-api, while waiting on the API call a spinner animation will happen */
+
 import {useState, useEffect } from 'react';
 import Spinner from 'react-bootstrap/Spinner';
-import './css/RandomVerse.css'
+import '../../css/RandomVerse.css'
 
 
 function RandomVerse() {

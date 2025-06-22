@@ -1,6 +1,8 @@
+/** Component that cycles through random bible verses on the main page right under the navbar */
+
 import Carousel from 'react-bootstrap/Carousel';
 import CarouselItem from 'react-bootstrap/CarouselItem'
-import RandomVerse from './RandomVerse';
+import RandomVerse from './components/RandomVerse.js';
 import {useState} from 'react';
 
 function BibleVerses() {
