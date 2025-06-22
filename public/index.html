@@ -32,6 +32,7 @@
   }  
   .container-fluid {
     padding: 60px 50px;
+    scroll-margin-top: 20px;
   }
   .container {
     height: 100%;
@@ -232,6 +233,17 @@
     touch-action: none;
     padding: 5px;
   }
+  .img-thumbnail {
+    background-color: #FFE3BB;
+    display: flex;
+  }
+  .col-sm-4 {
+    display: flex;
+    justify-content: space-between;
+  }
+  .full-width {
+    width: 100% !important;
+  }
   @keyframes slide {
     0% {
       opacity: 0;
@@ -321,7 +333,7 @@
         <li class="nav-item"><a href="#experience" class="nav-link">EXPERIENCE</a></li>
         <li class="nav-item"><a href="#education" class="nav-link">EDUCATION</a></li>
         <li class="nav-item"><a href="#skills" class="nav-link">SKILLS</a></li>
-        <li class="nav-item"><a href="#additionalTasks" class="nav-link">ADDITIONAL TASKS</a></li>
+        <li class="nav-item"><a href="#projects" class="nav-link">PROJECTS</a></li>
       </ul>
     </div>
   </div>
@@ -342,52 +354,103 @@
 <!-- Container (About Section) -->
 <div id="about" class="container-fluid">
   <div class="row">
+    <div class="col-sm-4">
+       <img src="imgs/employee_picture.png" class="img-thumbnail"/>
+    </div>
     <div class="col-sm-8">
       <h2 class="custom-title">About</h2><br>
-      <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4><br>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      <br><button class="btn btn-default btn-lg">Get in Touch</button>
-    </div>
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-signal logo"></span>
+      <h4>Hi, my name is Caleb Hoskins! I am an Associate Software Engineer for the University of Dayton's 
+        Research Institute <a href="https://udayton.edu/udri/capabilities/software/autonomy-systems.php">Autonomy Systems Team</a>. 
+      I graduated from the University of Dayton in the Spring of 2021 with a Bachelors degree in Computer Science and then started working at the Research Institute after that.
+    I am getting ready to complete my Masters degree in Computer Science from the University of Dayton this Summer of 2025. I enjoy full stack development and exporing new technologies.</h4><br>
     </div>
   </div>
 </div>
 
-<div class="container-fluid bg-grey">
+<!-- Container (Experience Section) -->
+<div id="experience" class="container-fluid bg-grey">
   <div class="row">
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-globe logo slideanim"></span>
-    </div>
-    <div class="col-sm-8">
-      <h2>Our Values</h2><br>
-      <h4><strong>MISSION:</strong> Our mission lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4><br>
-      <p><strong>VISION:</strong> Our vision Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </div>
-  </div>
-</div>
-
-<!-- Container (Services Section) -->
-<div id="experience" class="container-fluid text-center">
-  <div class="row">
-    <div class="col-sm-8">
+    <div class="col-sm-8 full-width">
       <h2 class="custom-title">Experience</h2>
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="card" style="border-color: #FFE3BB; border-width: 3px;">
+            <div class="card-body">
+              <h5 class="card-title">Associate Software Engineer</h5>
+              <h6 class="card-subtitle mb-2 text-muted">University of Dayton Research Institute</h6>
+              <p class="card-text">Working on the Autonomous Systems Team to develop autonomous intelligent agents within government research projects.</p>
+              <p class="card-text"><small class="text-muted">June 2021 - Present - 4 yrs 1 mo</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Salesperson</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Menards</h6>
+              <p class="card-text">Worked in Building Materials Department and helped guests plan out what was needed for their project goals.</p>
+              <p class="card-text"><small class="text-muted">May 2018 - May 2021 - 3 yrs 3 mo</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Selector</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Meijer Distribution Center</h6>
+              <p class="card-text">Loaded product selection to be transferred to trailers for delivery to Meijer stores.</p>
+              <p class="card-text"><small class="text-muted">June 2017 - September 2017 - 3 mo</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
-<!-- Container (Portfolio Section) -->
-<div id="education" class="container-fluid text-center bg-grey">
+<!-- Container (Education Section) -->
+<div id="education" class="container-fluid">
     <div class="row">
-      <div class="col-sm-8">
+      <div class="col-sm-8 full-width">
         <h2 class="custom-title">Education</h2><br>
+        <div class="row">
+        <div class="col-sm-4">
+          <div class="card" style="border-color: #FFE3BB; border-width: 3px;">
+            <div class="card-body">
+              <h5 class="card-title">Masters of Computer Science</h5>
+              <h6 class="card-subtitle mb-2 text-muted">University of Dayton</h6>
+              <p class="card-text">Worked towards this while working full time for UDRI as an Assocaite Software Engineer. Will also be receiving a certificate in Autonomous Systems and Data Science. </p>
+              <p class="card-text"><small class="text-muted">Expected End of Summer 2025</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Bachelors of Computer Science</h5>
+              <h6 class="card-subtitle mb-2 text-muted">University of Dayton</h6>
+              <p class="card-text">While being a full time student worked part time at Menards through college and then after finishing this degree started at UDRI.</p>
+              <p class="card-text"><small class="text-muted">Completed May 2021</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">High School</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Troy Chrisitan High School</h6>
+              <p class="card-text">Have been a Dayton local my whole life.</p>
+              <p class="card-text"><small class="text-muted">Completed May 2017</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
       </div>
     </div>
 </div>
 
-<!-- Container (Pricing Section) -->
-<div id="skills" class="container-fluid">
+<!-- Container (Skills Section) -->
+<div id="skills" class="container-fluid bg-grey">
   <div class="row">
     <div class="col-sm-8">
       <h2 class="custom-class">Skills</h2>
@@ -395,11 +458,11 @@
   </div>
 </div>
 
-<!-- Container (Contact Section) -->
-<div id="additionalTasks" class="container-fluid bg-grey">
+<!-- Container (Projects Section) -->
+<div id="projects" class="container-fluid">
     <div class="row">
       <div class="col-sm-8">
-        <h2 class="custom-class">Additional Tasks</h2>
+        <h2 class="custom-class">Projects</h2>
       </div>
     </div>
 </div>
