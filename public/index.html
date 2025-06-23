@@ -248,6 +248,7 @@
   .skills-list {
     border-radius: 25px;
     width: fit-content;
+    text-align: left;
   }
   @keyframes slide {
     0% {
@@ -368,7 +369,13 @@
         Research Institute <a href="https://udayton.edu/udri/capabilities/software/autonomy-systems.php">Autonomy Systems Team</a>. 
       I graduated from the University of Dayton in the Spring of 2021 with a Bachelors degree in Computer Science and then started working at the Research Institute after that.
     I am getting ready to complete my Masters degree in Computer Science from the University of Dayton this Summer of 2025. I enjoy full stack development and exporing new technologies.</h4><br>
-    </div>
+        <h3 class="custom-title">Contact Info</h3>
+        <div id="email" onclick="showhideEmail()">
+            Click to Show my email
+            <script src="plainJs/email.js"></script>
+        </div>
+        <h4>You can reach out to me via the email above or here at my <a href="www.linkedin.com/in/caleb-hoskins-77a570210">Linked<i class="bi bi-linkedin"></i> account</a>.</h4>
+  </div>
   </div>
 </div>
 
@@ -522,19 +529,92 @@
 <!-- Container (Projects Section) -->
 <div id="projects" class="container-fluid">
     <div class="row">
-      <div class="col-sm-8">
+      <div class="col-sm-8 full width">
         <h2 class="custom-class">Projects</h2>
+        <div class="row" style="justify-content: center;">
+          <div class="col-sm-4">
+            <div class="row">
+              <h2><a href="https://mrdetector.netlify.app/">MrDetector<i class="bi bi-person-workspace"></i></a></h2><br>
+              <h4>Leverages an existing trained model with additional labels added on to the training. See the repo <a href="https://gitlab.com/tensorflow3101514/object-detection-webapp">here</a>.</h4>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+    <div class="row">
+      <div class="col-sm-10">
+        <h2 class="custom-class">Extra API Usage</h2>
+        <div class="row" style="justify-content: center;">
+          <div class="col-sm-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Random Joke Every Minute</h5>
+                <h6 class="card-subtitle mb-2 text-muted">From Public JokeAPI</h6>
+                <p class="card-text" id="jokeApi"></p>
+                <p class="card-text"><small class="text-muted">From Third Party <a href="https://v2.jokeapi.dev">https://v2.jokeapi.dev</a></small></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Latest Comic</h5>
+                <h6 class="card-subtitle mb-2 text-muted">From Public XKCD API</h6>
+                <p class="card-text" id="comicText"></p>
+                <p class="card-text"><small class="text-body-secondary">From Third Party <a href="https://xkcd.vercel.app/">https://xkcd.vercel.app/</a></small></p>
+              </div>
+              <img src="..." class="card-img-bottom" alt="daily comic" id="comicImg">
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
 </div>
 
 <footer class="container-fluid text-center">
-  <a href="#myPage" title="To Top">
-    <span class="glyphicon glyphicon-chevron-up"></span>
-  </a>
+  <a href="https://info.flagcounter.com/82Qm"><img src="https://s05.flagcounter.com/count2/82Qm/bg_FFE3BB/txt_03A6A1/border_03A6A1/columns_8/maxflags_12/viewers_0/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
 </footer>
 
 <script>
+    // Using jokeAPI, this is executed automatically
+    function getJoke() {
+      $.get("https://v2.jokeapi.dev/joke/Any?type=single",
+          function(result) {
+              if (result != null) {
+                  console.log("From jokeAPI: " + JSON.stringify(result));
+                  $("#jokeApi").html(encodeInput(result.joke));
+              }
+              
+          }
+      )
+    }
+    // init with joke then do one every min
+    getJoke();
+    setInterval(getJoke, 1000*60);
+
+    // make api call to get comic from public third party
+    function getLatestComic() {
+      $.get("https://xkcd.now.sh/?comic=latest",
+        function(result) {
+          if (result != null) {
+            console.log(JSON.stringify(result));
+            $("#comicText").html(encodeInput(result.alt));
+            $("#comicImg").attr("src", result.img)
+          }
+        }
+      )
+    }
+    // init comic
+    getLatestComic();
+    // fetch an API call once an hour
+    setInterval(getLatestComic, (1000*60)*60)
+
+  function encodeInput(input) {
+      const encoded = document.createElement('div');
+      encoded.innerText = input;
+      return encoded.innerHTML;
+  }
+
 $(document).ready(function(){
   // Add smooth scrolling to all links in navbar + footer link
   $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
