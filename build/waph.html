@@ -1,38 +1,79 @@
 <!DOCTYPE html>
 <html>
-    <link rel="stylesheet" href="https://waph-phung.github.io/style1.css">
-    <style>
-        .button {
-            background-color: teal;
-            border: none;
-            color: white;
-            padding: 5px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 12px;
-            margin: 4px 2px;
-            cursor: pointer;
-            transition-duration: 0.4s;
-        }
-        .button:hover {
-            background-color: aquamarine;
-            color: black;
-        }
-        .round {
-            border-radius: 8px;
-        }
-        #response {
-            background-color: teal;
-            color: white;
-        }
-    </style>
     <head>
-        <script src="plainJs/jquery-3.7.1.min.js"></script>
+        <title>WAPH: Caleb Hoskins</title>
         <meta charset="utf-8">
-        <title>WAPH-Caleb Hoskins</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" href="./index.css">
     </head>
     <body>
+        <nav class="navbar navbar-default navbar-expand-lg sticky-top">
+            <div class="container">
+                <a id="navIconParent" class="navbar-brand" href="#myPage">
+                <div id="navClock" container="body" [dynamicPosition]="false" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title=displayTime()>
+                    <canvas id="navIcon" width="100" height="100"></canvas>
+                    <!-- displays the analog clock from Profressors codebase -->
+                    <script src="https://waph-phung.github.io/clock.js"></script>
+                    <script type="text/javascript">
+                        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+                        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                        return new bootstrap.Tooltip(tooltipTriggerEl)
+                        })
+
+                        var canvas = document.getElementById("navIcon");
+                        var ctx = canvas.getContext("2d");
+                        var radius = canvas.height / 2;
+                        ctx.translate(radius, radius);
+                        radius = radius * 0.90;
+                        setInterval(drawClock, 1000);
+
+                        function drawClock() {
+                            drawFace(ctx, radius);
+                            drawNumbers(ctx, radius);
+                            drawTime(ctx, radius);
+                        }
+                        // This gets the tooltip reference over the analog clock and updates it with the digital date/time
+                        function displayTime() {
+                            var exampleTriggerEl = document.getElementById('navClock');
+                            var tooltip = bootstrap.Tooltip.getInstance(exampleTriggerEl);
+                            tooltip.setContent({ '.tooltip-inner': '' + new Date() + '' });
+                            // tooltip.update();
+                        }
+                        setInterval(displayTime,500);
+                    </script>
+                </div>
+                WAPH
+                </a>
+                <button type="button" id="toggleBtn" class="btn navbar-toggler" data-bs-toggle="collapse" data-bs-target="#myNavbar" aria-controls="myNavbar" aria-expanded="false" aria-label="Toggle Nav">
+                <svg id="navBtnIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+                </svg>                       
+                </button>
+                <!-- </div> -->
+                <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="nav-item"><a href="#labs" class="nav-link">LABS</a></li>
+                    <li class="nav-item"><a href="#hackathons" class="nav-link">HACKATHONS</a></li>
+                    <li class="nav-item"><a href="#projects" class="nav-link">PROJECTS</a></li>
+                    <li class="nav-item"><a href="#teamProjects" class="nav-link">TEAM PROJECTS</a></li>
+                </ul>
+                </div>
+            </div>
+            </nav>
+            <script type="text/javascript">
+            // this will auto close the navbar if the user clicks outside of it in mobile view, or if one of the links are clicked
+            $(document).on('click',function(e){
+                if($('#myNavbar').hasClass('show')){
+                $('.collapse').collapse('hide'); 
+                }
+            })
+            </script>
         <div class="containerwrapper">
             <div id="top" style="background-color: teal;">
                 <h1>Web Application Programming and Hacking</h1>

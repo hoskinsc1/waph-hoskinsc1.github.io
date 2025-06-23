@@ -336,7 +336,7 @@
     }
     if (document.cookie.indexOf("calebHoskinsGuest") <0 ){
       appendAlert("Welcome!", "This is your first time to my homepage, I hope you enjoy!");
-      document.cookie = "calebHoskinsGuest=guestusername";
+      document.cookie = "calebHoskinsGuest=guestusername; expires=Fri, 31 Dec 9999 23:59:59 GMT";
       
     }else {
       let lastDate = document.cookie
@@ -346,7 +346,7 @@
       appendAlert("Welcome back!", "Your last visit was " + lastDate)
       // alert("Welcome back! Your last visit was " + lastDate);
     }
-    document.cookie = "lastVisit=" + new Date().toLocaleString() + "";
+    document.cookie = "lastVisit=" + new Date().toLocaleString() + "; expires=Fri, 31 Dec 9999 23:59:59 GMT";
 
 // const bsAlert = new bootstrap.Alert('#myAlert')
 
