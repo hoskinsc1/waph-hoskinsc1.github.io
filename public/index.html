@@ -230,9 +230,12 @@
     padding-top: 40px;
   }
   .tooltip {
-    pointer-events: none;
+    pointer-events: none !important;
     touch-action: none;
     padding: 5px;
+  }
+  .popover {
+    pointer-events: none !important;
   }
   .img-thumbnail {
     background-color: #FFE3BB;
@@ -285,9 +288,18 @@
       font-size: 150px;
     }
   }
+  #alertWelcomePlaceholder {
+    z-index: 9999;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
   </style>
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+  <div id="alertWelcomePlaceholder"></div>
 
 <nav class="navbar navbar-default navbar-expand-lg sticky-top">
   <div class="container">
@@ -367,15 +379,16 @@
       <h2 class="custom-title">About</h2><br>
       <h4>Hi, my name is Caleb Hoskins! I am an Associate Software Engineer for the University of Dayton's 
         Research Institute <a href="https://udayton.edu/udri/capabilities/software/autonomy-systems.php">Autonomy Systems Team</a>. 
-      I graduated from the University of Dayton in the Spring of 2021 with a Bachelors degree in Computer Science and then started working at the Research Institute after that.
-    I am getting ready to complete my Masters degree in Computer Science from the University of Dayton this Summer of 2025. I enjoy full stack development and exporing new technologies.</h4><br>
-        <h3 class="custom-title">Contact Info</h3>
-        <div id="email" onclick="showhideEmail()">
-            Click to Show my email
-            <script src="plainJs/email.js"></script>
-        </div>
-        <h4>You can reach out to me via the email above or here at my <a href="www.linkedin.com/in/caleb-hoskins-77a570210">Linked<i class="bi bi-linkedin"></i> account</a>.</h4>
-  </div>
+        I graduated from the University of Dayton in the Spring of 2021 with a Bachelors degree in Computer Science and then started working at the Research Institute after that.
+        I'm currently working on my Masters degree in Computer Science, from the University of Dayton, and will complete it in the Summer of 2025
+        . I enjoy full stack development and exporing new technologies.</h4><br>
+      <h3 class="custom-title">Contact Info</h3>
+      <div id="email" onclick="showhideEmail()">
+          Click to Show my email
+          <script src="plainJs/email.js"></script>
+      </div>
+      <h4>You can reach out to me via the email above or here at my <a href="www.linkedin.com/in/caleb-hoskins-77a570210">Linked<i class="bi bi-linkedin"></i> account</a>.</h4>
+    </div>
   </div>
 </div>
 
@@ -592,12 +605,42 @@
 </footer>
 
 <script>
+    const alertPlaceholder = document.getElementById('alertWelcomePlaceholder')
+    const appendAlert = (title, message) => {
+      const wrapper = document.createElement('div')
+      wrapper.innerHTML = [
+        `<div class="alert alert-info alert-dismissible fade show" role="alert">`,
+        `  <h4 class="alert-heading">${title}</h4>`,
+        `   <div>${message}</div>`,
+        '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+        '</div>'
+      ].join('')
+
+      alertPlaceholder.append(wrapper)
+    }
+    if (document.cookie.indexOf("calebHoskinsGuest") <0 ){
+      appendAlert("Welcome!", "This is your first time to my homepage, I hope you enjoy!");
+      document.cookie = "calebHoskinsGuest=guestusername";
+      
+    }else {
+      let lastDate = document.cookie
+      .split("; ")
+      .find((row) => row.startsWith("lastVisit="))
+      ?.split("=")[1];
+      appendAlert("Welcome back!", "Your last visit was " + lastDate)
+      // alert("Welcome back! Your last visit was " + lastDate);
+    }
+    document.cookie = "lastVisit=" + new Date().toLocaleString() + "";
+
+// const bsAlert = new bootstrap.Alert('#myAlert')
+
+
     // Using jokeAPI, this is executed automatically
     function getJoke() {
       $.get("https://v2.jokeapi.dev/joke/Any?type=single",
           function(result) {
               if (result != null) {
-                  console.log("From jokeAPI: " + JSON.stringify(result));
+                  // console.log("From jokeAPI: " + JSON.stringify(result));
                   $("#jokeApi").html(encodeInput(result.joke));
               }
               
@@ -613,7 +656,7 @@
       $.get("https://xkcd.now.sh/?comic=latest",
         function(result) {
           if (result != null) {
-            console.log(JSON.stringify(result));
+            // console.log(JSON.stringify(result));
             $("#comicText").html(encodeInput(result.alt));
             $("#comicImg").attr("src", result.img)
           }

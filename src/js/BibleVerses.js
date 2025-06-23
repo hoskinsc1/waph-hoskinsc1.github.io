@@ -10,7 +10,7 @@ function BibleVerses() {
     const [secondVerse, setSecondVerse] = useState(Math.random());
 
     const getNewVerse = (selectedIndex, e) => {
-        console.log(selectedIndex);
+        // console.log(selectedIndex);
         if (selectedIndex === 1) {
             setFirstVerse(Math.random());
         } else {
