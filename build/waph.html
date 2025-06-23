@@ -43,10 +43,7 @@
                 <div id="menubar">
                     <h3>Student: Caleb Hoskins</h3>
                     <img src="images/headshot.png" alt="My headshot" width="50">
-                    <div id="email" onclick="showhideEmail()">
-                        Show my email
-                        <script src="plainJs/email.js"></script>
-                    </div>
+                    
                     <div id="digit-clock">
                         <script type="text/javascript">
                             
@@ -126,17 +123,6 @@
                                 );
                                 $("data").val("");
                             }
-
-                            // Using jokeAPI, this is executed automatically
-                            $.get("https://v2.jokeapi.dev/joke/Programming?type=single",
-                                function(result) {
-                                    if (result != null) {
-                                        console.log("From jokeAPI: " + JSON.stringify(result));
-                                        $("#response").html("A programming joke of the day: " + encodeInput(result.joke));
-                                    }
-                                    
-                                }
-                            )
 
                             // using fetch to reach out to an external API
                             async function guessAge(name) {
