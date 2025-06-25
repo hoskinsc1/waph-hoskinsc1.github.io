@@ -19,7 +19,7 @@ body {
   }  
   .container-fluid {
     padding: 60px 50px;
-    scroll-margin-top: 20px;
+    scroll-margin-top: 30px;
   }
   .container {
     height: 100%;
