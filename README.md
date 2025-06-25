@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Note: the `gh-pages` branch is the deployed website. You can update this deployment by running the command `npm run deploy`
+
 ## Available Scripts
 
 In the project directory, you can run:
