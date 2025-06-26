@@ -4,6 +4,42 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Note: the `gh-pages` branch is the deployed website. You can update this deployment by running the command `npm run deploy`
 
+## Tree Strucutre of Repo
+
+```bash
+├── package.json // has the React installed deps
+├── package-lock.json // is a lock versioned of package.json
+├── public // things that are public on webpage
+│   ├── favicon.ico
+│   ├── imgs
+│   │   ├── employee_picture.png
+│   │   └── headshot.png
+│   ├── index.css // style file shared by index and waph.html
+│   ├── index.html // main site html, majority of stuff here
+│   ├── logo192.png
+│   ├── logo512.png
+│   ├── manifest.json
+│   ├── plainJs // the scripts from lab 2
+│   │   ├── email.js
+│   │   └── jquery-3.7.1.min.js
+│   ├── robots.txt
+│   └── waph.html // html for waph site
+├── README.md // this
+└── src // files for everything react
+    ├── css // style / logo things here
+    │   ├── App.css
+    │   ├── bootstrap
+    │   │   └── bootstrap_custom.scss // custom bootstrap style launch
+    │   ├── index.css
+    │   ├── logo.svg
+    │   └── RandomVerse.css // css for bible verse section
+    ├── index.js // loads react things into index.html
+    └── js // javascript portion done in react
+        ├── BibleVerses.js // cycles through the components/randomVerse
+        └── components
+            └── RandomVerse.js // gets public api to get bible verse and format it into a react component
+```
+
 ## Available Scripts
 
 In the project directory, you can run:
