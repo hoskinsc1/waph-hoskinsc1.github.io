@@ -230,6 +230,7 @@ body {
   .col-sm-4 {
     display: flex;
     justify-content: space-between;
+    padding: 10px;
   }
   .full-width {
     width: 100% !important;
